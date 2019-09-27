@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
+    public AudioClip soundGetitem;
+
     void OnTriggerEnter(Collider hit)
     {
+
         if (hit.CompareTag("Player"))
         {
+            AudioSource.PlayClipAtPoint(soundGetitem, transform.position);
             Destroy(gameObject);
         }
     }

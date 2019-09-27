@@ -67,6 +67,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -105,3 +106,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04fec12b6dc4fa8489e5bda0a19ae97e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundGetitem: {fileID: 8300000, guid: 8c76d3a862d37544087075554ff7fe2f, type: 3}

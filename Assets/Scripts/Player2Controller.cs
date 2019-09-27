@@ -7,11 +7,16 @@ public class Player2Controller : MonoBehaviour
     private Animator animator;
     public float moveSpeed = 500;
     public float turnSpeed = 10;
+    public float jumpPower = 10;
+    public bool onGround { get; set; }
+    private AudioSource soundJump;
 
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
+        soundJump = GetComponent<AudioSource>();
+        onGround = false;
     }
 
     // Update is called once per frame
@@ -39,6 +44,13 @@ public class Player2Controller : MonoBehaviour
             transform.rotation = Quaternion.RotateTowards(curr_quat, dest_quat, turnSpeed);
 
             animator.SetBool("is_walk", true);
+        }
+
+        if (Input.GetButtonDown("Jump") && onGround)
+        {
+            rigidbody.velocity = transform.up * jumpPower;
+            soundJump.Play();
+            onGround = false;
         }
 
     }
